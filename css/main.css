@@ -941,7 +941,7 @@ select {
     display:none;
     position:fixed;
     top:0px;
-    z-index: 99999;
+    z-index: 9999;
     left:0px;
 }
 
@@ -1026,6 +1026,40 @@ select {
     color:#fff;
 }
 
+
+
+/*Edit jquery popup*/
+
+.ui-widget-header{
+	border: none;
+	background-color: transparent;
+}
+
+
+.ui-widget.ui-widget-content{
+	max-width: 700px;
+    width: 90%;
+    padding: 40px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #fff;
+    position: relative;
+    z-index: 99999;
+}
+
+.ui-dialog-titlebar{
+	position: absolute !important;
+        right: 2px;
+    top: 0px;
+}
+
+.popup_content{
+	overflow: inherit !important;
+}
+
+#dilog{
+	z-index: 999999;
+}
 
 /*TICKET*/
 

@@ -36,9 +36,10 @@
     <link rel="stylesheet" href="css/flipCard.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.css">
-
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/color/red.css">
+
 
 
     <!-- Font -->
@@ -76,6 +77,12 @@
             .speaker:nth-child(3n+1) { clear:none; }
             .speaker:nth-child(4n+1) { clear:left; }
         }
+
+        #dialog-link {
+            padding: .4em 1em .4em 20px;
+            text-decoration: none;
+            position: relative;
+        }
     </style>
 
 
@@ -92,36 +99,7 @@
         </div>
     </div>
 </div> -->
-<div class="wrap-popup-speaker wrap-popup">
-    <div class="speaker-popup-speaker speaker-popup">
-        <div class="row">
-            <div class="speaker col-xs-8 col-sm-4 col-md-4 col-lg-4">
-                 <figure>
-                    <img class="img-responsive" id="speaker_img_src" 
-                         src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAPjAAAAJGE0NDU1NzZkLWI5MmYtNDY0YS05ZjBlLTNlNjNiZDNjOGFhMw.jpg"
-                         alt="">
-                    <figcaption class="text-center">
-                        <h4 id="speaker_name">Eric LARAMÉE</h4>
-                        <p id="speaker_position">Coach and trainer</p>
-                        <a  id="speaker_linkedin" target="_blank" href="https://www.linkedin.com/in/erlaramee"><i
-                                class="fa fa-3x fa-linkedin-square"></i></a>
-                    </figcaption>
-                    
-                </figure> 
-            </div>
-            <div class="speaker col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <h4 id="speaker_spk_name">Pierre E. NEIS</h4>
-                        <span class="title" id="speaker_spk_title">Lean Agile Coach Agile Tour Beirut 2016</span><br></span>
-                        <span id="speaker_original" class="topic" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="Agile Animal Farm highlights the behaviours we all have and how we are interacting with others.
-At the end of the presentation, you will find a small introduction on how to use this game in Organisational Development."><span id="speaker_topic">Topic: Agile Culture and Organisational Shift</span></span>
-            </div>
-        </div>
-        <h4>Topic Description</h4>
-        <!-- <a class="popup-close" href="#">x</a> -->
-        <a class="popup-close" href="javascript:$('.wrap-popup').removeClass('show');">x</a>
-        <p id="speaker_description"></p>
-    </div> 
-</div>
+
 
 <!-- NAVIGATION -->
 <nav class="navbar navbar-fixed-top navbar-custom" role="navigation">
@@ -591,6 +569,42 @@ At the end of the presentation, you will find a small introduction on how to use
 </section>
 
 
+<!-- popup -->
+
+<div  class="wrap-popup-speaker wrap-popup"></div>
+<div id="dialog" class="speaker-popup-speaker">
+    <div class="row">
+        <div class="speaker col-xs-8 col-sm-4 col-md-4 col-lg-4">
+             <figure>
+                <img class="img-responsive" id="speaker_img_src" 
+                     src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAPjAAAAJGE0NDU1NzZkLWI5MmYtNDY0YS05ZjBlLTNlNjNiZDNjOGFhMw.jpg"
+                     alt="">
+                <figcaption class="text-center">
+                    <h4 id="speaker_name">Eric LARAMÉE</h4>
+                    <p id="speaker_position">Coach and trainer</p>
+                    <a  id="speaker_linkedin" target="_blank" href="https://www.linkedin.com/in/erlaramee"><i
+                            class="fa fa-3x fa-linkedin-square"></i></a>
+                </figcaption>
+                
+            </figure> 
+        </div>
+        <div class="speaker col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <h4 id="speaker_spk_name">Pierre E. NEIS</h4>
+                <span class="title" id="speaker_spk_title">Lean Agile Coach Agile Tour Beirut 2016</span><br>
+                <span id="speaker_original" class="topic" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="Agile Animal Farm highlights the behaviours we all have and how we are interacting with others.
+    At the end of the presentation, you will find a small introduction on how to use this game in Organisational Development.">
+                    <span id="speaker_topic">Topic: Agile Culture and Organisational Shift</span>
+                </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <h4>Topic Description</h4>
+        <p id="speaker_description"></p>
+    </div>
+</div>
+<!-- end popup -->
+
 <template id="tmpAgendaItem">
     <div class="event">
       <div class="event-inner">
@@ -612,6 +626,7 @@ At the end of the presentation, you will find a small introduction on how to use
 
 <!-- modernizr -->
 <script src="js/modernizr.custom.00695.js"></script>
+<script src="js/jquery.js"></script>
 
 <script src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -622,6 +637,7 @@ At the end of the presentation, you will find a small introduction on how to use
 <script src="js/jquery.countTo.js"></script>
 <script src="js/flipCard.js"></script>
 <script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script src="js/smooth-scroll.js"></script>
 <script src="js/retina-1.1.0.min.js"></script>
 <script src="js/speakers.js"></script>
@@ -647,6 +663,17 @@ At the end of the presentation, you will find a small introduction on how to use
     </div>
 
 
+</script>
+<script type="text/javascript">
+
+    
+
+// Link to open the dialog
+// $( "#dialog-link" ).click(function( event ) {
+//     $( "#dialog" ).dialog( "open" );
+//     event.preventDefault();
+// });
+   
 </script>
 
 
