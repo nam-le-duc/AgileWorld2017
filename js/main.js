@@ -165,16 +165,17 @@ $(window).load(function(){
 	    html+= template;
 	  });
 	  $("#content").html(html);
-
   	})
 
   $(document).on('click','.open-popup', function(){
     var id = $(this).data('id');
-    console.log(id);
+    
     console.log(speakers[id]);
     var speaker = speakers[id];
     var can_show = true;
      $(Object.keys(speaker)).each(function(index, key){
+  
+     	console.log(speaker['img_src']);
      	if(key == 'img_src'){
 			$("#speaker_" + key).attr('src',speaker[key] || '');
      	}else if(key == 'img_alt'){
