@@ -252,6 +252,88 @@ $(window).load(function(){
 	
 	});
 
+		var agendaData = {
+  "danang": [
+    {
+      "TIME": "7:00 - 8:00",
+      "PROGRAM": "REGISTRATION & COFFEE TIME"
+    },
+    {
+      "TIME": "8:00 - 8:30",
+      "PROGRAM": "OPENING PLENARY"
+    },
+    {
+      "TIME": "8:30 - 9:30",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "9:30 - 10:15",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "10:15 - 10:45",
+      "PROGRAM": "TEA BREAK AND NETWORKING"
+    },
+    {
+      "TIME": "10:45 - 11:45",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "11:45 - 13:00",
+      "PROGRAM": "LUNCH TIME"
+    },
+    {
+      "TIME": "13:00 - 14:00",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "14:00 - 14:30",
+      "PROGRAM": "TEA BREAK AND NETWORKING"
+    },
+    {
+      "TIME": "14:30 - 15:15",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "15:15 - 16:15",
+      "PROGRAM": "CLOSING PLENARY"
+    }
+  ]
+}
+
+
+function renderAgenda(place) {
+    var $container = $('[data-place="' + place + '"]');
+    $container.empty();
+    $.each(agendaData[place], function(index, item) {
+      var $tmpAgendaItem = $($('#tmpAgendaItem').html().trim());
+      $tmpAgendaItem.find('.time').html(item['TIME']);
+
+      // Columns
+      var roomCount = Object.keys(item).length;
+      for(var roomIndex = 1; roomIndex < roomCount; roomIndex++) {
+        var $tmpColumn = $($('#tmpAgendaColumn').html().trim()),
+          key = Object.keys(item)[roomIndex],
+          val = item[key].split('\r\n');
+        
+        // Heading
+        if (val[0] != undefined)
+          $tmpColumn.find('.topic-heading').html(val[0]);
+        // Topic name
+        if (val[1] != undefined)
+          $tmpColumn.find('.topic-title').html(val[1]);
+        $tmpAgendaItem.find('.description').append($tmpColumn);
+      }
+      // console.log(Object.keys(item).length);
+      // console.log('-----------');
+      $container.append($tmpAgendaItem);
+    });
+  }
+
+  //renderAgenda('saigon');
+  renderAgenda('danang');
+  //renderAgenda('hanoi');
+
 });
 
 	// CONTACT FORM FUNCTION
@@ -347,6 +429,11 @@ $(window).load(function(){
     infowindow.open(map, marker);
 	}
 	google.maps.event.addDomListener(window, 'load', init_map);
+
+
+
+
+
 	
 
 	

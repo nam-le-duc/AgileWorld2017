@@ -85,13 +85,13 @@
 <body>
 
 <!-- PRELOADING  -->
-<div id="preload">
+<!-- <div id="preload">
     <div class="preload">
         <div class="loader">
             Loading...
         </div>
     </div>
-</div>
+</div> -->
 <div class="wrap-popup-speaker wrap-popup">
     <div class="speaker-popup-speaker speaker-popup">
         <div class="row">
@@ -146,8 +146,10 @@ At the end of the presentation, you will find a small introduction on how to use
                     <li><a data-scroll href="#schedule">Schedule</a></li>
                 -->
                 <li><a data-scroll href="#venue">Venue</a></li>
+                <li><a data-scroll href="#agenda">Agenda</a></li>
                 <li><a data-scroll href="#sponsors">Sponsors</a></li>
                 <li><a data-scroll href="#register">Register</a></li>
+                <li><a data-scroll href="#ticket">Ticket</a></li>
                 <li><a data-scroll href="#contact">Contact</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -334,6 +336,98 @@ At the end of the presentation, you will find a small introduction on how to use
     </div>
 </section>
 
+<!-- AGENDA -->
+          <section id="agenda">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                  <h2 class="uppercase text-center"><img width="80px" src="img/agenda.png">Event Agenda</h2>
+                  <div id="days" class="owl-carousel">
+                    <!-- <div class="item uppercase">
+                      <h4 class="uppercase hidden-xs">HoChiMinh</h4>
+                      <h5>Oct 14, 2016</h5>
+                    </div> -->
+                    <div class="item uppercase">
+                      <h4 class="uppercase hidden-xs">Danang</h4>
+                      <h5>June 3rd, 2017</h5>
+                    </div>
+                    <!-- <div class="item uppercase">
+                      <h4 class="uppercase hidden-xs">Hanoi</h4>
+                      <h5>Oct 16, 2016</h5>
+                    </div> -->
+                  </div>
+                  <!-- days -->
+                  <div id="timetable" class="owl-carousel center owl-theme">
+                    <!-- DAY 1 -->
+                    <!-- <div id="day1" class="item column-one-one">
+                      <div class="event room">
+                        <div class="event-inner">
+                          <div class="icon">
+                            <span class="time">TIME</span>
+                          </div>
+                          <div class="room-no description">
+                            <div class="event-column">
+                              <h3>PROGRAM</h3>
+                            </div>
+                            <div class="event-column">
+                              <h3>ROOM 1</h3>
+                            </div>
+                            <div class="event-column">
+                              <h3>ROOM 2</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-place="saigon"></div>
+                    </div> -->
+                    <!--end day 1-->
+                    <div id="day2" class="item column-one-one">
+                      <div class="event room">
+                        <div class="event-inner">
+                          <div class="icon">
+                            <span class="time">TIME</span>
+                          </div>
+                          <div class="room-no description">
+                            <div class="event-column-dn">
+                              <h3>PROGRAM</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div data-place="danang"></div>
+                    </div>
+                    <!-- end day 2 -->
+                    <!-- <div id="day3" class="item column-one-two">
+                      <div class="event room">
+                        <div class="event-inner">
+                          <div class="icon">
+                            <span class="time">TIME</span>
+                          </div>
+                          <div class="room-no description">
+                            <div class="event-column-dn">
+                              <h3>HALL ROOM</h3>
+                            </div>
+                            <div class="event-column-dn">
+                              <h3>ROOM 1</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-place="hanoi">
+                      
+                      </div>
+                    </div> -->
+                    <!-- end day 3 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!-- time table -->
+            </div>
+          </section>
+
 <!-- SPONSORS -->
 <section id="sponsors">
     <div class="container">
@@ -411,6 +505,41 @@ At the end of the presentation, you will find a small introduction on how to use
     </div>
 </section>
 
+<!-- TICKET -->
+<section id="ticket">
+    <div class="container">
+      <div class="row">
+        <h2 class="uppercase text-center">
+            <img src="img/icon-ticket.png">
+          <span class="marginLeft15">GET YOUR TICKET</span>
+        </h2>
+       <div id="groupEventBrite">
+          <div class="inline-heading with-icon">
+            <div class="heading">
+              <img class="heading-icon" src="img/icon-eventbrite.png" />
+            </div>
+            <div class="heading">
+                EVENTBRITE
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+              <img class="img-responsive" src="img/thumb-eventbrite.png" />
+            </div>
+            <div class="col-sm-6">
+              <h4 class="title">
+                <span class="half-underline">Get the ticket of Agile {Tour} World 2017 <br>
+                 and make payment via Eventbrite</span>
+              </h4>
+              <div class="clearfix"></div>
+              <a class="btn btn-white btn-lg" href="http://goo.gl/KvP4sP" target="_blank">BOOK NOW</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <!-- CONTACT -->
 <section id="contact">
 
@@ -466,6 +595,26 @@ At the end of the presentation, you will find a small introduction on how to use
         </div>
     </div>
 </section>
+
+
+<template id="tmpAgendaItem">
+    <div class="event">
+      <div class="event-inner">
+        <div class="icon">
+          <i class="fa fa-3x fa-clock-o"></i>
+          <span class="time"></span>
+        </div>
+        <div class="room-no description no-bg"></div>
+      </div>
+    </div>
+  </template>
+  <template id="tmpAgendaColumn">
+    <div class="event-column-dn">
+        <h3 class="topic-heading"></h3>
+        <!-- <div class="topic-title"></div> -->
+    </div>
+</template>
+
 
 <!-- modernizr -->
 <script src="js/modernizr.custom.00695.js"></script>
